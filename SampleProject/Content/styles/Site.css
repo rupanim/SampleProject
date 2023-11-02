@@ -1,0 +1,92 @@
+﻿html {
+    background: url(../Images/BC_hero.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+    background-color: transparent;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select {
+    max-width: 280px;
+}
+
+
+
+.borderRed {
+    border-color: red;
+}
+
+.borderGreen {
+    border-color: green;
+}
+
+.button-panel
+{    
+    display: table;
+    margin: 0 auto;
+}
+
+.textRed {
+    color: red;
+}
+
+.sectionHeading {
+    font-family: 'Script MT';
+    font-size: 45px;
+    text-align: center;
+    padding: 0px;
+    color: white
+}
+
+.roundPic{
+    border-radius: 50px;
+    height: 100px;
+    width: 100px;
+}
+
+#nav button:hover {
+    color: white;
+    background-color:gray;
+    transform: scale(1.3,1.3);
+    -webkit-transform: scale(1.3,1.3);
+    -moz-transform: scale(1.3,1.3);
+}
+
+#nav button {
+    font-family: 'Century Gothic';
+    font-size: 22px;
+}
+
+#demoContent, #anchor1Body, #anchor2Body, #anchor3Body, #anchor4Body, #footer {
+    background-color: transparent;
+    color: white;
+    overflow: hidden
+}
+
+@media only screen and (max-width: 320px) {
+
+    body {
+        font-size: 2em;
+    }
+}

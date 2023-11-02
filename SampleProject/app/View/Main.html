@@ -1,0 +1,163 @@
+﻿<!DOCTYPE html>
+<html data-ng-app="app" data-ng-strict-di>
+<head>
+    <title data-ng-bind="title">BC Public Service Demo Application</title>
+    <link href="../../Content/styles/angular-material.min.css" rel="stylesheet" />
+    <link href="../../Content/styles/bootstrap.min.css" rel="stylesheet" />
+    <link href="../../Content/styles/Site.css" rel="stylesheet" />
+    <script src="../../Scripts/jquery-2.0.3.js"></script>
+    <script src="../../Scripts/jquery-ui-1.10.4.js"></script>
+    <script src="../../Scripts/angular.js"></script>
+    <script src="../../Scripts/angular-route.js"></script>
+    <script src="../../Scripts/angular-animate.min.js"></script>
+    <script src="../../Scripts/angular-aria.min.js"></script>
+    <script src="../../Scripts/angular-material.min.js"></script>
+    <script src="../../Scripts/bootstrap.js"></script>
+    <script src="../../app/app.js"></script>
+    <script src="../../app/Controller/sampleProjController.js"></script>
+    <script src="../../app/Factory/factory.js"></script>
+</head>
+<body ng-app="app" layout="column" ng-controller="sampleProjController" class="container body-content">   
+  
+        <md-toolbar style="background-color: transparent; color: black;font-family: Rockwell; align-content:center;">
+            <div style="overflow:hidden;">
+                <img alt="Logo Missing!" src="../../Content/Images/gov_bc_logo.svg" style="height: 70%; display: block; margin-left: auto; margin-right: auto; width: 50%" />
+            </div>            
+        </md-toolbar>
+    <br />
+        <div class="md-container" layout="row" id="nav" flex>
+            <md-sidenav md-is-locked-open="true" class="col-md-3" style="background-color: transparent">
+               <md-list>
+                   <md-list-item>                         
+                       <md-button class="btn btn-primary btn-block" ng-click="gotoAnchor(1)" style="font-family:'Century Gothic'; font-size: 18px;">
+                           What We Do
+                       </md-button>
+                    </md-list-item>
+                    <md-list-item>
+                        <md-button class="btn btn-primary btn-block" ng-click="gotoAnchor(2)" style="font-family:'Century Gothic'; font-size: 18px;">
+                            Who We Are
+                        </md-button>
+                    </md-list-item>
+                    <md-list-item>
+                        <md-button class="btn btn-primary btn-block" ng-click="gotoAnchor(3)" style="font-family:'Century Gothic'; font-size: 18px;">
+                            Bored? Lets play!
+                        </md-button>
+                    </md-list-item>
+                    <md-list-item>
+                        <md-button class="btn btn-primary btn-block" ng-click="gotoAnchor(4)" style="font-family:'Century Gothic'; font-size: 18px;">
+                            How to Reach Us
+                        </md-button>
+                    </md-list-item>
+               </md-list>
+            </md-sidenav>
+            <md-content id="demoContent" flex>
+                <div id="anchor1" style="height: 100%" >                    
+                        <div class="sectionHeading">                           
+                                What We Do <br />
+                                <img src="../../Content/Images/photo_resources.jpg" />                           
+                        </div>
+                    <br />
+                    <div id="anchor1Body" class="panel panel-default panel-body" style="font-family:'Lucida Sans'; font-size:20px; border: 0px">
+                        Members of the public service are the politically impartial government employees who are responsible for carrying out the day-to-day activities of government and for delivering public services to the citizens of B.C.
+                    </div>
+                    </div>
+                <div id="anchor2" style="height: 100%">
+                    <div class="sectionHeading">
+                        Who We Are <br />                        
+                    </div>
+                    <div id="anchor2Body" class="panel panel-default panel-body" style="font-family: 'Lucida Sans'; border: 0px; font-size: 20px">
+                        <div class="col-md-6">
+                            <div class="col-md-4">
+                                <img src="../../Content/Images/Janet_Austin.jpg" class="roundPic" />
+                            </div>
+                            <div>
+                                <b>Janet Austin</b>  <br />
+                                Lieutenant Governor of BC
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="col-md-4">
+                                <img src="../../Content/Images/David_Eby.png" class="roundPic" />
+                            </div>
+                            <div>
+                                <b>David Eby</b>  <br />
+                                BC Premier
+                            </div>
+                        </div>
+                        <br />
+                        <div class="col-md-6" style="padding-top: 20px">
+                            <div class="col-md-4">
+                                <img src="../../Content/Images/girlPic.jpg" class="roundPic" />
+                            </div>
+                            <div>
+                                <b>Jane Doe</b>  <br />
+                                ​Minister of Agriculture and Food
+                            </div>
+                        </div>
+                        <div class="col-md-6" style="padding-top: 20px">
+                            <div class="col-md-4">
+                                <img src="../../Content/Images/guyPic.png" class="roundPic" />
+                            </div>
+                            <div>
+                                <b>John Doe</b>  <br />
+                                Minister of Labour
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div id="anchor3" style="height: 100%" class="text-center">
+                    <div class="sectionHeading">
+                        Guess the State
+                    </div>
+                        
+                    <div id="anchor3Body" class="panel panel-default panel-body" style="font-family:'Lucida Sans'; border: 0px; font-size: 20px">
+                        <div class="container" style="overflow:hidden; width:auto">
+                            <form class="form-inline">
+                                <table class="table">
+                                    <tr>
+                                        <td width="50%" class="text-center" style="border-top: 0px;">
+                                            <div class="form-group">
+                                                <label>Name of the State</label>
+                                                <select ng-class="DefaultOption('Definition')" ng-options="definition for definition in DefinitionList" ng-model="definitionSelected" ng-change="resetGame()"></select>
+                                            </div>
+                                        </td>
+                                        <td class="text-center" style="border-top: 0px;">
+                                            <div class="form-group">
+                                                <label>Abbreviated Name</label>
+                                                <select ng-class="DefaultOption('Abbrv')" ng-options="abbrv for abbrv in AbbrvList" ng-model="abbrvSelected" ng-change="resetGame()"></select>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </table>
+                                <div class="btn-group button-panel text-center" style="padding-bottom: 20px">
+                                    <button type="submit" class="btn btn-info btn-lg" ng-click="ValidateForm() && Match()">Match?</button>
+                                </div>
+                                <br/>
+                                <div ng-bind-html="result" style="font-family:'Lucida Sans'; border: 0px; font-size: 20px" ></div>
+                            </form>
+                        </div>
+                    </div>
+                    </div>
+                <div id="anchor4" style="height: 100%">
+                    <div class="sectionHeading">
+                        How to Reach Us <br />                        
+                    </div>
+                    <div id="anchor4Body" class="panel panel-default panel-body" style="font-family:'Lucida Sans'; border: 0px; font-size: 20px">
+                        <b>Quick question? Get a quick answer.</b>
+                        <br /><br />
+                        <b>Text us Monday to Friday, 7:30am to 5:00pm PDT <u>1-604-660-2421 </u> </b>
+                        <br/><br />
+                        Standard message and data rates may apply. See the BC Government's SMS Services Terms of Use.
+                        <br/><br />
+                        Do not provide personal information such as health number, drivers license number or birth date.                        
+                    </div>
+                    </div>
+            </md-content>
+        </div>
+    <hr />
+    <footer id="footer">
+        <p style="text-align:center">&copy; BC Public Service Demo Application</p>
+    </footer>
+</body>
+</html>
